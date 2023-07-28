@@ -1,6 +1,6 @@
 from PIL import Image
 import matplotlib.pyplot as plt
-from ocultar_mensagem import ocultar_mensagem
+from ocultar_mensagem import ocultar_mensagem, is_grayscale
 from decodificar_mensagem import decodificar_mensagem
 
 
@@ -37,14 +37,20 @@ img_oculta = Image.open('img_com_msg.bmp')
 plt.imshow(img_oculta, cmap='gray')
 plt.show()
 
-# Carregar a imagem com a mensagem oculta
-imagem_oculta = Image.open('img_com_msg.bmp')
 
-# Decodificar a mensagem da imagem
-mensagem_decodificada = decodificar_mensagem(imagem_oculta)
+#Verificar se escala de cinzas (8 bits por pixel)?
 
-# Imprimir a mensagem decodificada
-print("A mensagem oculta na imagem é:", mensagem_decodificada)
+print(is_grayscale('img_com_msg.bmp'))
 
-# Exibir a imagem
-imagem_oculta.show()
+
+# # Carregar a imagem com a mensagem oculta
+# imagem_oculta = Image.open('img_com_msg.bmp')
+
+# # Decodificar a mensagem da imagem
+# mensagem_decodificada = decodificar_mensagem(imagem_oculta)
+
+# # Imprimir a mensagem decodificada
+# print("A mensagem oculta na imagem é:", mensagem_decodificada)
+
+# # Exibir a imagem
+# imagem_oculta.show()
